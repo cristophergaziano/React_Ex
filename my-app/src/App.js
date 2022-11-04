@@ -3,9 +3,10 @@ import { Welcome } from "./Welcome";
 
 export class App extends React.Component {
   render() {
+    
     return (
       <div>
-        <Welcome name={<strong>Cristopher</strong>} />
+        <Welcome name = "John" />
       </div>
     );
   }

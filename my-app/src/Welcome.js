@@ -4,11 +4,19 @@ import { Age } from "./Age";
 export class Welcome extends React.Component {
   render() {
     return (
-        <div>
-    <p>Welcome, {this.props.name}</p>
-    <Age age={30}/>
-    </div>
-    )
+      <div>
+        {this.props.name == "John" ? (
+          <div>
+            <p>Welcome, {this.props.name}</p>
+            <Age age={64} />
+          </div>
+        ) : (
+          <div>
+            <p>Welcome, {this.props.name}</p>
+          </div>
+        )}
+      </div>
+    );
   }
 }
 
