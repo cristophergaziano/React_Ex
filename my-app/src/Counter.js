@@ -20,7 +20,7 @@ export class Counter extends React.Component {
 
   render() {
     return (
-      <div>
+        <div>
         <CounterDisplay count={this.state.count} />
       </div>
     );
