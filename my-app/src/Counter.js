@@ -16,20 +16,16 @@ export class Counter extends React.Component {
     }, this.props.incrementInterval);
   }
 
-  componentWillUnmount() {
-    if (this._interval) {
-        clearInterval(this._interval)
+  componentDidUpdate(prevState) {
+    if (this.state.count !== prevState.count) {
+      return this.state.count;
     }
   }
 
   render() {
     return (
       <div>
-        <CounterDisplay
-          count={
-            this.state.count <= 10 && this.state.count
-          }
-        />
+        <CounterDisplay count={this.state.count <= 10 && this.state.count} />
       </div>
     );
   }
