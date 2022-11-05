@@ -2,6 +2,6 @@ function greeting(name) {
     return <h1>Hello, {name}</h1>;
 }
 
-greeting();
+greeting(<strong>Cristopher</strong>);
 
-// The value is undefined
+// using React and JSX we can also pass a JSX expression without problem
