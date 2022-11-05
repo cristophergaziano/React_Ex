@@ -1,7 +1,12 @@
 import React from "react";
+import { ClickCounter } from "./ClickCounter";
 
 export class CounterDisplay extends React.Component {
   render() {
-    return <h1>Count: {this.props.count}</h1>;
+    return (
+      <div>
+        <ClickCounter />
+      </div>
+    );
   }
 }
