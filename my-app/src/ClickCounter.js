@@ -14,11 +14,12 @@ export class ClickCounter extends React.Component {
   render() {
     return (
       <div>
-        
-        <p><button onClick={this.handleCounterIncrement.bind(this)}>
-          Increment
-        </button> 👈 Click the button on the left​ to increase the counter on the right 👉​ {this.state.count}</p>
-        <p>Thank you! 🥰​</p>
+        <p>
+          <button onClick={this.handleCounterIncrement.bind(this)}>
+            Increment
+          </button>{" "}
+          {this.state.count}
+        </p>
       </div>
     );
   }
