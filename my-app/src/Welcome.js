@@ -1,5 +1,6 @@
 import React from "react";
 import { Age } from "./Age";
+import { InteractiveWelcome } from "./InteractiveWelcome";
 
 export class Welcome extends React.Component {
   render() {
