@@ -46,42 +46,49 @@ export class Login extends React.Component {
         })
     }
 
-    componentDidUpdate() {
-        console.log(this.state)
-      }
+    handleResetButton = (event) => {
+        this.setState({
+            username: "",
+            password: "",
+            remember: false,
+            loginDisabled: true
+        })
+    }
 
   render() {
     return (
-      <div>
-        <input
-          name="username"
-          value={this.state.username}
-          onChange={this.handleInputChange}
-        ></input>
-        <input
-          name="password"
-          type="password"
-          value={this.state.password}
-          onChange={this.handleInputChange}
-        ></input>
-        <input
-          name="remember"
-          type="checkbox"
-          checked={this.state.remember}
-          onChange={this.handleCheckboxChange}
-        ></input>
-        <button
-        name="login"
-        type="button"
-        disabled={this.state.loginDisabled}
-        onChange={this.handleInputChange}
-        onClick={this.onLogin}>Login</button>
-      </div>
+      <><div>
+            <input
+                name="username"
+                value={this.state.username}
+                onChange={this.handleInputChange}
+            ></input>
+            <input
+                name="password"
+                type="password"
+                value={this.state.password}
+                onChange={this.handleInputChange}
+            ></input>
+            <input
+                name="remember"
+                type="checkbox"
+                checked={this.state.remember}
+                onChange={this.handleCheckboxChange}
+            ></input>
+        </div><div>
+                <button
+                    name="login"
+                    type="button"
+                    disabled={this.state.loginDisabled}
+                    onChange={this.handleInputChange}
+                    onClick={this.onLogin}>Login</button>
+                    <button
+                    name="Reset"
+                    type="button"
+                    disabled={this.state.loginDisabled}
+                    onChange={this.handleInputChange}
+                    onClick={this.handleResetButton}>Reset</button>
+            </div></>
     );
   }
 }
-
-// Add a "login" button to the Login component. 
-// This button should be disabled as long as the username and password inputs are empty. 
-// When clicked, the event handler attached to the button should call an onLogin function 
-// passed as a prop to the Login component, passing it the state.
