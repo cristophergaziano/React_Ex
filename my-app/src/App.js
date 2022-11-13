@@ -1,5 +1,6 @@
 import React from "react";
 import { ClickTracker } from "./ClickTracker";
+import { Colors } from "./Colors";
 import { Counter } from "./Counter";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Login } from "./Login";
@@ -17,6 +18,7 @@ export class App extends React.Component {
         <InteractiveWelcome name={this.props.name}/>
         <Login />
         <UncontrolledLogin />
+        <Colors colors={["Yellow", "Green", "White", "Red"]}/>
       </div>
     );
   }
