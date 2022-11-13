@@ -5,14 +5,18 @@ export class Login extends React.Component {
     username: "",
     password: "",
     remember: false,
+    loginDisabled: true,
   };
 
   handleInputChange = (event) => {
     const value = event.target.value;
     const name = event.target.name;
+    const disabled = event.target.disabled;
+    const type = event.target.type;
 
     this.setState({
-      [name]: value,
+      [name]: type === "button" ? disabled : value,
+      loginDisabled: value === "" ? true : false
     });
   };
 
@@ -24,6 +28,27 @@ export class Login extends React.Component {
       [name]: checked,
     });
   };
+
+  handleLoginButtonChange = (event) => {
+    const disabled = event.target.disabled;
+    const name = event.target.name;
+
+    this.setState({
+        [name]: disabled,
+      });
+    };
+
+    onLogin = (event) => {
+        this.setState({
+            username: this.state.username,
+            password: this.state.password,
+            remember: this.state.remember
+        })
+    }
+
+    componentDidUpdate() {
+        console.log(this.state)
+      }
 
   render() {
     return (
@@ -45,11 +70,18 @@ export class Login extends React.Component {
           checked={this.state.remember}
           onChange={this.handleCheckboxChange}
         ></input>
+        <button
+        name="login"
+        type="button"
+        disabled={this.state.loginDisabled}
+        onChange={this.handleInputChange}
+        onClick={this.onLogin}>Login</button>
       </div>
     );
   }
 }
 
-// Create an InteractiveWelcome component that renders an input tag and the Welcome component.
-// Pass the current content of the input tag to the name prop of the Welcome component.
-// The input tag should be a controlled component.
+// Add a "login" button to the Login component. 
+// This button should be disabled as long as the username and password inputs are empty. 
+// When clicked, the event handler attached to the button should call an onLogin function 
+// passed as a prop to the Login component, passing it the state.
