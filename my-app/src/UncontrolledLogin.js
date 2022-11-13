@@ -23,7 +23,7 @@ export class UncontrolledLogin extends React.Component {
         <div>
           <h2>This is the Login form with uncontrolled components</h2>
           <form onSubmit={this.handleFormLogin}>
-            <input name="username" defaultValue="" />
+            <input name="username" defaultValue="" autoFocus />
             <input name="password" type="password" defaultValue="" />
             <input name="remember" type="checkbox" defaultValue="" />
             <br />
