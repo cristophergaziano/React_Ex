@@ -57,7 +57,8 @@ export class Login extends React.Component {
 
   render() {
     return (
-      <><div>
+      <><div style={{border: "solid 1px red"}}><div>
+        <h2>This is the Login form with controlled components</h2>
             <input
                 name="username"
                 value={this.state.username}
@@ -88,7 +89,7 @@ export class Login extends React.Component {
                     disabled={this.state.loginDisabled}
                     onChange={this.handleInputChange}
                     onClick={this.handleResetButton}>Reset</button>
-            </div></>
+            </div></div></>
     );
   }
 }
