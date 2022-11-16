@@ -82,7 +82,10 @@ export class Login extends React.Component {
                     type="button"
                     disabled={this.state.loginDisabled}
                     onChange={this.handleInputChange}
-                    onClick={this.onLogin}>Login</button>
+                    onClick={this.onLogin}
+                    style={{
+                      backgroundColor: this.state.password.length < 8 ? "red" : " green"
+                    }}>Login</button>
                     <button
                     name="Reset"
                     type="button"
