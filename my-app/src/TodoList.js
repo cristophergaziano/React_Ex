@@ -9,18 +9,22 @@ export class TodoList extends React.Component {
       "JavaScript exercises",
       "React exercises",
     ],
+    inputField: "",
   };
 
   handleInputSave = (event) => {
     event.preventDefault();
-    this.setState({ input: event.target.value });
+    this.setState({
+      inputField: event.target.value,
+    });
   };
 
   handleInputAdd = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     this.setState({
-        items:[...this.state.items, this.state.input]
-    })
+      items: [...this.state.items, this.state.inputField],
+      inputField: "",
+    });
   };
 
   render() {
@@ -31,9 +35,16 @@ export class TodoList extends React.Component {
             <li key={index}>{item}</li>
           ))}
 
-          <input onChange={this.handleInputSave}></input>
+          <input
+            value={this.state.inputField}
+            onChange={this.handleInputSave}
+          ></input>
           {/* Added a condition rendering to avoid empty input */}
-          <button onClick={this.state.input !== "" ? this.handleInputAdd : false}>Add to list</button>
+          <button
+            onClick={this.state.inputField !== "" ? this.handleInputAdd : false}
+          >
+            Add to list
+          </button>
         </ul>
       </div>
     );
