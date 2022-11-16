@@ -6,16 +6,18 @@ export class Counter extends React.Component {
     count: this.props.initialValue,
   };
 
-
-
   render() {
     return (
-      <div>
-        <CounterDisplay
-          count={
-            this.state.count <= 10 && this.state.count
-          }
-        />
+      <div
+        style={{
+          backgroundColor: "white",
+          fontWeight: 700,
+          color: "darkgreen",
+          border: "1px solid darkgreen",
+          paddingLeft: "10px",
+        }}
+      >
+        <CounterDisplay count={this.state.count <= 10 && this.state.count} />
       </div>
     );
   }
