@@ -7,7 +7,7 @@ import { Container } from "./Container";
 export class App extends React.Component {
   render() {
     return (
-      <Container>
+      <Container title="My not-so-awesome App">
         <div>
           <Welcome name="Bernard" />
           <Counter />
