@@ -2,7 +2,7 @@ import React from "react";
 
 export class ClickTracker extends React.Component {
   state = {
-    str: '',
+    str: "",
   };
 
   handleButtonClick = (event) => {

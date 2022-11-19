@@ -16,7 +16,7 @@ export class Login extends React.Component {
 
     this.setState({
       [name]: type === "button" ? disabled : value,
-      loginDisabled: value === "" ? true : false
+      loginDisabled: value === "" ? true : false,
     });
   };
 
@@ -34,65 +34,77 @@ export class Login extends React.Component {
     const name = event.target.name;
 
     this.setState({
-        [name]: disabled,
-      });
-    };
+      [name]: disabled,
+    });
+  };
 
-    onLogin = (event) => {
-        this.setState({
-            username: this.state.username,
-            password: this.state.password,
-            remember: this.state.remember
-        })
-    }
+  onLogin = (event) => {
+    this.setState({
+      username: this.state.username,
+      password: this.state.password,
+      remember: this.state.remember,
+    });
+  };
 
-    handleResetButton = (event) => {
-        this.setState({
-            username: "",
-            password: "",
-            remember: false,
-            loginDisabled: true
-        })
-    }
+  handleResetButton = (event) => {
+    this.setState({
+      username: "",
+      password: "",
+      remember: false,
+      loginDisabled: true,
+    });
+  };
 
   render() {
     return (
-      <><div style={{border: "solid 1px red"}}><div>
-        <h2>This is the Login form with controlled components</h2>
+      <>
+        <div>
+          <div>
+            <h2>This is the Login form with controlled components</h2>
             <input
-                name="username"
-                value={this.state.username}
-                onChange={this.handleInputChange}
+              name="username"
+              value={this.state.username}
+              onChange={this.handleInputChange}
             ></input>
             <input
-                name="password"
-                type="password"
-                value={this.state.password}
-                onChange={this.handleInputChange}
+              name="password"
+              type="password"
+              value={this.state.password}
+              onChange={this.handleInputChange}
             ></input>
             <input
-                name="remember"
-                type="checkbox"
-                checked={this.state.remember}
-                onChange={this.handleCheckboxChange}
+              name="remember"
+              type="checkbox"
+              checked={this.state.remember}
+              onChange={this.handleCheckboxChange}
             ></input>
-        </div><div>
-                <button
-                    name="login"
-                    type="button"
-                    disabled={this.state.loginDisabled}
-                    onChange={this.handleInputChange}
-                    onClick={this.onLogin}
-                    style={{
-                      backgroundColor: this.state.password.length < 8 ? "red" : " green"
-                    }}>Login</button>
-                    <button
-                    name="Reset"
-                    type="button"
-                    disabled={this.state.loginDisabled}
-                    onChange={this.handleInputChange}
-                    onClick={this.handleResetButton}>Reset</button>
-            </div></div></>
+          </div>
+          <div>
+            <button
+              name="login"
+              type="button"
+              disabled={this.state.loginDisabled}
+              onChange={this.handleInputChange}
+              onClick={this.onLogin}
+              style={{
+                backgroundColor:
+                  this.state.password.length < 8 ? "red" : " green",
+              }}
+            >
+              Login
+            </button>
+            <button
+              name="Reset"
+              type="button"
+              disabled={this.state.loginDisabled}
+              onChange={this.handleInputChange}
+              onClick={this.handleResetButton}
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+      </>
     );
   }
 }
