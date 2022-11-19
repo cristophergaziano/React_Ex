@@ -5,7 +5,7 @@ export class Container extends React.Component {
     return (
       <div className="container">
         <div className="containerTitle">{this.props.title}</div>
-        {this.props.children}
+        <div>{this.props.children}</div>
       </div>
     );
   }
