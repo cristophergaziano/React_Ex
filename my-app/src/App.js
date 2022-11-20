@@ -4,7 +4,6 @@ import { Counter } from "./Counter";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
-import { Sum } from "./Sum";
 import { Login } from "./Login";
 
 export class App extends React.Component {
