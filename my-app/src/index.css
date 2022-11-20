@@ -11,8 +11,22 @@
 }
 
 .containerTitle {
-    font-size: 32px;
-    font-weight: 700;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-decoration: underline;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-decoration: underline;
+}
+
+.select-language {
+  font-size: 12px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.select-button {
+  font-size: 12px;
+  border: 2px solid red;
+  padding: 0px 5px 0px 5px;
+  margin-left: 5px;
 }
