@@ -43,28 +43,18 @@ export class TodoList extends React.Component {
   render() {
     return (
       <div>
-        <ul>
-          {this.state.items.map((item, index) => (
-            <li key={index}>
-              {item}{" "}
-              <button onClick={() => this.handleRemoveItem(index)}>
-                Remove
-              </button>
-            </li>
-          ))}
-
-          <input
-            value={this.state.inputField}
-            onChange={this.handleInputSave}
-          ></input>
-          {/* Added a condition rendering to avoid empty input */}
-          <button
-            onClick={this.state.inputField !== "" ? this.handleInputAdd : false}
-          >
-            Add to list
-          </button>
-          <button onClick={this.handleResetList}>Reset</button>
-        </ul>
+        {this.props.render(this.state.items, this.handleRemoveItem)}
+        <input
+          value={this.state.inputField}
+          onChange={this.handleInputSave}
+        ></input>
+        {/* Added a condition rendering to avoid empty input */}
+        <button
+          onClick={this.state.inputField !== "" ? this.handleInputAdd : false}
+        >
+          Add to list
+        </button>
+        <button onClick={this.handleResetList}>Reset</button>
       </div>
     );
   }
