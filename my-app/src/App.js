@@ -4,6 +4,7 @@ import { Counter } from "./Counter";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
+import { Sum } from "./Sum";
 
 export class App extends React.Component {
   state = {
@@ -30,6 +31,7 @@ export class App extends React.Component {
           <Welcome name="Bernard" />
           <DisplayLanguage />
           <Counter />
+          <Sum />
         </Container>
         </LanguageContext.Provider>
       </div>
