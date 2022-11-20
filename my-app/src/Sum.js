@@ -1,7 +1,8 @@
-export function Sum({ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9] }) {
+export function Sum(props) {
+  
   let sum = 0;
 
-  numbers.forEach((item) => {
+  props.numbers.forEach((item) => {
     sum += item;
   });
 

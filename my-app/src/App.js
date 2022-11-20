@@ -31,7 +31,7 @@ export class App extends React.Component {
           <Welcome name="Bernard" />
           <DisplayLanguage />
           <Counter />
-          <Sum />
+          <Sum numbers={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}/>
         </Container>
         </LanguageContext.Provider>
       </div>
