@@ -34,11 +34,11 @@ export class TodoList extends React.Component {
     });
   };
 
-  handleRemoveItem(index) {
+  handleRemoveItem = (index) => {
     const items = this.state.items;
     items.splice(index, 1);
     this.setState({ items });
-  }
+  };
 
   render() {
     return (
@@ -50,7 +50,8 @@ export class TodoList extends React.Component {
         ></input>
         {/* Added a condition rendering to avoid empty input */}
         <button
-          onClick={this.state.inputField !== "" ? this.handleInputAdd : false}
+          onClick={this.handleInputAdd}
+          disabled={this.state.inputField === ""}
         >
           Add to list
         </button>

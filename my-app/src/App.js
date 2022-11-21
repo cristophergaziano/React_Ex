@@ -1,7 +1,5 @@
 import React from "react";
 import { Welcome } from "./Welcome";
-import { Counter } from "./Counter";
-import { Login } from "./Login";
 import { Container } from "./Container";
 import { TodoList } from "./TodoList";
 
@@ -12,11 +10,11 @@ export class App extends React.Component {
         <div>
           <Welcome name="Bernard" />
           <TodoList
-            render={( items,index, handleRemoveItem ) => (
+            render={( items, handleRemoveItem ) => (
               <div>
                 {" "}
                 <ul>
-                  {items.map((item) => (
+                  {items.map((item, index) => (
                     <li key={index}>
                       {item}{" "}
                       <button onClick={() => handleRemoveItem(index)}>
