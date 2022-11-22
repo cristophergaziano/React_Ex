@@ -3,11 +3,19 @@ import { useEffect, useState } from "react";
 export function ClickCounter() {
   const [counter, setCounter] = useState(0);
 
+  useEffect(() => {
+    console.log(`I have mounted`);
+
+    return () => {
+      console.log(`I'm unmounted`);
+    };
+  }, []);
+
+  useEffect(onCounterChange, [counter]);
+
   function onCounterChange() {
     console.log(`The counter is ${counter}`);
   }
-
-  useEffect(onCounterChange, [counter]);
 
   function handleCounterIncrement() {
     setCounter((c) => c + 1);
