@@ -11,10 +11,13 @@ export function ClickCounter() {
     };
   }, []);
 
+  useEffect(() => {})
+
   useEffect(onCounterChange, [counter]);
 
   function onCounterChange() {
     console.log(`The counter is ${counter}`);
+
   }
 
   function handleCounterIncrement() {
