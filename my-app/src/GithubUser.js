@@ -18,15 +18,9 @@ export function GithubUser({ username }) {
 
   return (
     <div>
-      <p>
-        <h3>Name: {data && data.name}</h3>
-      </p>
-      <p>
-        <h3>LinkedIn: {data && data.blog}</h3>
-      </p>
-      <p>
-        <img src={data.avatar_url} alt="User Avatar"></img>
-      </p>
+      <h3>Name: {data && data.name}</h3>
+
+      <h3>LinkedIn: {data && data.blog}</h3>
     </div>
   );
 }
