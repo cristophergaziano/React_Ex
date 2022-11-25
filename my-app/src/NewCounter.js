@@ -3,6 +3,8 @@
 // decrement and reset the counter.
 
 import { useCounter } from "./useCounter";
+import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/Button";
 
 const NewCounter = ({ initialValue = 0 }) => {
   const { counter, onIncrement, onDecrement, onReset } =
@@ -12,13 +14,20 @@ const NewCounter = ({ initialValue = 0 }) => {
     <div>
       <p>Your counter is setted to {counter}</p>
       <p>What do you want to do?</p>
-      <button onClick={onDecrement} disabled={counter < 1 ? true : false}>
-        Decrement
-      </button>
-      <button onClick={onReset} disabled={counter < 1 ? true : false}>
-        Reset
-      </button>
-      <button onClick={onIncrement}>Increment</button>
+      <ButtonGroup
+        variant="outlined"
+        color="primary"
+        size="small"
+        aria-label="outlined small primary button group"
+      >
+        <Button onClick={onDecrement} disabled={counter < 1 ? true : false}>
+          Decrement
+        </Button>
+        <Button onClick={onReset} disabled={counter < 1 ? true : false}>
+          Reset
+        </Button>
+        <Button onClick={onIncrement}>Increment</Button>
+      </ButtonGroup>
     </div>
   );
 };
