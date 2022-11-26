@@ -1,14 +1,14 @@
 import { React } from "react";
 import { Welcome } from "./Welcome";
 import { Container } from "./Container";
-import NewForm from "./NewForm";
+import NewGithubUser from "./NewGithubUser";
 
 export function App() {
   return (
     <div>
       <Container title="My not-so-awesome App">
         <Welcome name="Bernard" />
-        <NewForm />
+        <NewGithubUser username="cristophergaziano" />
       </Container>
     </div>
   );
