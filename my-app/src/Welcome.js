@@ -16,32 +16,28 @@ export function Welcome(props) {
     <div>
       {props.name === "John" ? (
         <div>
-          <p>
-            <LanguageContext.Consumer>
-              {(language) => {
-                return (
-                  <div>
-                    {Strings[language].CURRENT_LANGUAGE} {props.name}
-                  </div>
-                );
-              }}
-            </LanguageContext.Consumer>{" "}
-          </p>
+          <LanguageContext.Consumer>
+            {(language) => {
+              return (
+                <div>
+                  {Strings[language].CURRENT_LANGUAGE} {props.name}
+                </div>
+              );
+            }}
+          </LanguageContext.Consumer>{" "}
           <Age age={17} />
         </div>
       ) : (
         <div>
-          <p>
-            <LanguageContext.Consumer>
-              {(language) => {
-                return (
-                  <div>
-                    {Strings[language].CURRENT_LANGUAGE} {props.name}
-                  </div>
-                );
-              }}
-            </LanguageContext.Consumer>
-          </p>
+          <LanguageContext.Consumer>
+            {(language) => {
+              return (
+                <div>
+                  {Strings[language].CURRENT_LANGUAGE} {props.name}
+                </div>
+              );
+            }}
+          </LanguageContext.Consumer>
         </div>
       )}
     </div>
