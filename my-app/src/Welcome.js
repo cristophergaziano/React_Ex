@@ -45,8 +45,7 @@ export function Welcome(props) {
 
       )}
 
-<Link to="/counter">Check the counter!</Link>{" "}
-<Link to="/users/:username">Go to my profile!</Link>
+
     </div>
 
     

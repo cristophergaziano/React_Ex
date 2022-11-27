@@ -9,8 +9,7 @@ const ShowGithubUser = () => {
     return ( <div>
         
         <GithubUser username="cristophergaziano" />
-        <Link to="/">Back to Home</Link>{" "}
-        <Link to="/counter">Check the counter!</Link>{" "}
+
         </div> );
 }
  

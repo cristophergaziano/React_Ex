@@ -18,8 +18,6 @@ export class Counter extends React.Component {
         }}
       >
         <CounterDisplay count={this.state.count <= 10 && this.state.count} />
-        <Link to="/">Back to Home</Link>{" "}
-        <Link to="/users/:username">Go to my profile!</Link>
       </div>
     );
   }
