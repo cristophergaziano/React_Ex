@@ -1,16 +1,14 @@
-import {GithubUser} from "./GithubUser"
-import {useParams} from "react-router-dom"
-import {Link} from "react-router-dom"
+import { GithubUser } from "./GithubUser";
+import { useParams } from "react-router-dom";
 
 const ShowGithubUser = () => {
-    const {username} = useParams()
+  const { username } = useParams();
 
+  return (
+    <div>
+      <GithubUser username="cristophergaziano" />
+    </div>
+  );
+};
 
-    return ( <div>
-        
-        <GithubUser username="cristophergaziano" />
-
-        </div> );
-}
- 
 export default ShowGithubUser;

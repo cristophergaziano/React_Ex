@@ -4,6 +4,8 @@
 
 import { useState } from "react";
 import { GithubUser } from "./GithubUser";
+import ShowGithubUser from "./ShowGithubUser";
+import { Route, Routes, Link } from "react-router-dom";
 
 export default function GithubUserList() {
   const [data, setData] = useState({
@@ -34,20 +36,9 @@ export default function GithubUserList() {
 
   return (
     <div>
-      <ul>
-        {data.usernames.map((username, index) => (
-          <li key={index}>
-            {<GithubUser username={username} />}
-          </li>
-        ))}
-      </ul>
-      <input value={data.inputField} onChange={handleInputSave}></input>
-      <button
-        disabled={data.inputField === "" ? true : false}
-        onClick={handleInputAdd}
-      >
-        Add Username
-      </button>
+      <Link to="/users/:username">
+        Check the profile!
+      </Link>
     </div>
   );
 }
