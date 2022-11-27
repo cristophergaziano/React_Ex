@@ -1,6 +1,7 @@
 import React from "react";
 import { Age } from "./Age";
 import { LanguageContext } from "./LanguageContext";
+import {Link} from "react-router-dom"
 
 const Strings = {
   en: {
@@ -38,6 +39,7 @@ export function Welcome(props) {
               );
             }}
           </LanguageContext.Consumer>
+          <Link to="/counter">Go to the Counter</Link>
         </div>
       )}
     </div>
