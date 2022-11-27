@@ -1,40 +1,39 @@
-import React from "react";
+import { React } from "react";
 import { Welcome } from "./Welcome";
-import { Counter } from "./Counter";
 import { Container } from "./Container";
-import { LanguageContext } from "./LanguageContext";
-import { DisplayLanguage } from "./DisplayLanguage";
-import { Login } from "./Login";
+import FilteredList from "./FilteredList";
 
-export class App extends React.Component {
-  state = {
-    language: "en",
-  };
+export function App() {
 
-  handleLanguageChange = (event) => {
-    this.setState({
-      language: event.target.value,
-    });
-  };
+  const users = [
+    {
+      name: "Ugo",
+      id: 1,
+      age: 12,
+    },
+    {
+      name: "Davide",
+      id: 2,
+      age: 19,
+    },
+    {
+      name: "Teresa",
+      id: 3,
+      age: 16,
+    },
+    {
+      name: "Fabrizio",
+      id: 4,
+      age: 21,
+    },
+  ];
 
-  render() {
-    return (
-      <div>
-        <p className="select-language">Select language: {" "}
-        <select className="select-button" value={this.state.language} onChange={this.handleLanguageChange}>
-          <option value="en">English</option>
-          <option value="it">Italiano</option>
-        </select>
-        </p>
-        <LanguageContext.Provider value={this.state.language}>
-        <Container title="My not-so-awesome App">
-          <Welcome name="Bernard" />
-          <DisplayLanguage />
-          <Counter />
-          <Login />
-        </Container>
-        </LanguageContext.Provider>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Container title="My not-so-awesome App">
+        <Welcome name="Bernard" />
+        <FilteredList users={users} />
+      </Container>
+    </div>
+  );
 }
