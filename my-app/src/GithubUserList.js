@@ -37,7 +37,7 @@ export default function GithubUserList() {
       <ul>
         {data.usernames.map((username, index) => (
           <li key={index}>
-            <GithubUser username={username} />
+            {<GithubUser username={username} />}
           </li>
         ))}
       </ul>
