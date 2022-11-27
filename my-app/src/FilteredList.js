@@ -62,13 +62,13 @@ const FilteredList = () => {
 };
 
 const List = ({ list }) => {
-    return (
-      <ul>
-        {list.map((item) => (
-          <ListItem key={item.id} item={item} />
-        ))}
-      </ul>
-    );
+  return (
+    <ul>
+      {list.map((item) => (
+        <ListItem key={item.id} item={item} />
+      ))}
+    </ul>
+  );
 };
 
 const ListItem = ({ item }) => {
