@@ -39,10 +39,17 @@ export function Welcome(props) {
               );
             }}
           </LanguageContext.Consumer>
-          <Link to="/users/:username">Go to my profile!</Link>
+          
         </div>
+
+
       )}
+
+<Link to="/counter">Check the counter!</Link>{" "}
+<Link to="/users/:username">Go to my profile!</Link>
     </div>
+
+    
   );
 }
 
