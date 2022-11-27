@@ -8,7 +8,7 @@ export function App() {
     <div>
       <Container title="My not-so-awesome App">
         <Welcome name="Bernard" />
-        <GithubUser username="cristophergaziano" />
+        <GithubUser username={null} />
       </Container>
     </div>
   );

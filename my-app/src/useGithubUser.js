@@ -4,7 +4,7 @@ const fetcher = (url) => fetch(url).then((response) => response.json());
 
 const useGithubUser = ({ username }) => {
   const { data, error } = useSWR(
-    `https://api.github.com/users/${username}`,
+    username !== null ? `https://api.github.com/users/${username}` : null,
     fetcher
   );
 
