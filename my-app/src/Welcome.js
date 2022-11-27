@@ -39,7 +39,7 @@ export function Welcome(props) {
               );
             }}
           </LanguageContext.Consumer>
-          <Link to="/counter">Go to the Counter</Link>
+          <Link to="/users/:username">Go to my profile!</Link>
         </div>
       )}
     </div>

@@ -3,6 +3,8 @@ import { Welcome } from "./Welcome";
 import { Container } from "./Container";
 import { Counter } from "./Counter";
 import { Routes, Route } from "react-router-dom";
+import ShowGithubUser from "./ShowGithubUser";
+import { GithubUser } from "./GithubUser";
 
 export function App() {
   return (
@@ -11,10 +13,10 @@ export function App() {
         <Routes>
           <Route path="/" element={<Welcome name="Bernard" />} />
           <Route path="counter" element={<Counter />} />
+          <Route path="users/:username" element={<ShowGithubUser />} />
         </Routes>
       </Container>
     </div>
   );
 }
-
 
