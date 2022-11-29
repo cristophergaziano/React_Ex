@@ -36,8 +36,21 @@ export default function GithubUserList() {
 
   return (
     <div>
-      <Link to="/users/:username">Check the profile!</Link>
-      <Outlet />
+      <h2>Add a user and select it!</h2>
+      <ul>
+        {data.usernames.map((username, index) => (
+          <li key={index}>
+            <GithubUser username={username} />
+          </li>
+        ))}
+      </ul>
+      <input value={data.inputField} onChange={handleInputSave}></input>
+      <button
+        disabled={data.inputField === "" ? true : false}
+        onClick={handleInputAdd}
+      >
+        Add Username
+      </button>
     </div>
   );
 }

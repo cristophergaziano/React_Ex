@@ -6,7 +6,7 @@ const ShowGithubUser = () => {
 
   return (
     <div>
-      <GithubUser username="cristophergaziano" />
+      <GithubUser username={username} />
     </div>
   );
 };
