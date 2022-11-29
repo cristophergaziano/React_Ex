@@ -1,5 +1,6 @@
 import React from "react";
 import { CounterDisplay } from "./CounterDisplay";
+import {Link} from "react-router-dom"
 
 export class Counter extends React.Component {
   state = {
@@ -11,7 +12,6 @@ export class Counter extends React.Component {
       <div
         style={{
           backgroundColor: "white",
-          fontWeight: 700,
           color: "darkgreen",
           border: "1px solid darkgreen",
           paddingLeft: "10px",

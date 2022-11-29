@@ -1,40 +1,42 @@
-import React from "react";
+import { React } from "react";
 import { Welcome } from "./Welcome";
-import { Counter } from "./Counter";
 import { Container } from "./Container";
-import { LanguageContext } from "./LanguageContext";
-import { DisplayLanguage } from "./DisplayLanguage";
-import { Login } from "./Login";
+import { Counter } from "./Counter";
+import { Routes, Route, Link } from "react-router-dom";
+import ShowGithubUser from "./ShowGithubUser";
+import GithubUserList from "./GithubUserList";
 
-export class App extends React.Component {
-  state = {
-    language: "en",
-  };
-
-  handleLanguageChange = (event) => {
-    this.setState({
-      language: event.target.value,
-    });
-  };
-
-  render() {
-    return (
-      <div>
-        <p className="select-language">Select language: {" "}
-        <select className="select-button" value={this.state.language} onChange={this.handleLanguageChange}>
-          <option value="en">English</option>
-          <option value="it">Italiano</option>
-        </select>
-        </p>
-        <LanguageContext.Provider value={this.state.language}>
-        <Container title="My not-so-awesome App">
-          <Welcome name="Bernard" />
-          <DisplayLanguage />
-          <Counter />
-          <Login />
-        </Container>
-        </LanguageContext.Provider>
-      </div>
-    );
-  }
+export function App() {
+  return (
+    <div>
+      <Container
+        title={
+          <div>
+            <h1>"My Not So Awesome App"</h1>
+            <h6>
+              <Link to="/">Back to Home</Link> |
+              <Link to="/counter">Check the counter!</Link> |
+              <Link to="/users">Check some Github profile!</Link>
+            </h6>
+          </div>
+        }
+      >
+        <Routes>
+          <Route path="/" element={<Welcome name="Bernard" />} />
+          <Route path="counter" element={<Counter />} />
+          <Route path="users" element={<GithubUserList />}>
+            <Route path=":username" element={<ShowGithubUser />} />
+          </Route>
+          <Route
+            path="*"
+            element={
+              <div>
+                <p>Not found, sorry!</p>
+              </div>
+            }
+          />
+        </Routes>
+      </Container>
+    </div>
+  );
 }

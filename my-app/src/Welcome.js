@@ -1,6 +1,7 @@
 import React from "react";
 import { Age } from "./Age";
 import { LanguageContext } from "./LanguageContext";
+import {Link} from "react-router-dom"
 
 const Strings = {
   en: {
@@ -16,35 +17,38 @@ export function Welcome(props) {
     <div>
       {props.name === "John" ? (
         <div>
-          <p>
-            <LanguageContext.Consumer>
-              {(language) => {
-                return (
-                  <div>
-                    {Strings[language].CURRENT_LANGUAGE} {props.name}
-                  </div>
-                );
-              }}
-            </LanguageContext.Consumer>{" "}
-          </p>
+          <LanguageContext.Consumer>
+            {(language) => {
+              return (
+                <div>
+                  {Strings[language].CURRENT_LANGUAGE} {props.name}
+                </div>
+              );
+            }}
+          </LanguageContext.Consumer>{" "}
           <Age age={17} />
         </div>
       ) : (
         <div>
-          <p>
-            <LanguageContext.Consumer>
-              {(language) => {
-                return (
-                  <div>
-                    {Strings[language].CURRENT_LANGUAGE} {props.name}
-                  </div>
-                );
-              }}
-            </LanguageContext.Consumer>
-          </p>
+          <LanguageContext.Consumer>
+            {(language) => {
+              return (
+                <div>
+                  {Strings[language].CURRENT_LANGUAGE} {props.name}
+                </div>
+              );
+            }}
+          </LanguageContext.Consumer>
+          
         </div>
+
+
       )}
+
+
     </div>
+
+    
   );
 }
 
