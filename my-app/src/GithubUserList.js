@@ -5,7 +5,7 @@
 import { useState } from "react";
 import { GithubUser } from "./GithubUser";
 import ShowGithubUser from "./ShowGithubUser";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link, Outlet } from "react-router-dom";
 
 export default function GithubUserList() {
   const [data, setData] = useState({
@@ -36,9 +36,8 @@ export default function GithubUserList() {
 
   return (
     <div>
-      <Link to="/users/:username">
-        Check the profile!
-      </Link>
+      <Link to="/users/:username">Check the profile!</Link>
+      <Outlet />
     </div>
   );
 }
